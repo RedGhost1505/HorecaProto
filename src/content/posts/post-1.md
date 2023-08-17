@@ -1,17 +1,16 @@
 ---
-title: "How to make toys from old Olarpaper"
+title: "Seamos amigables con el medio ambiente"
 description: "meta description"
 date: 2022-04-04T05:00:00Z
-image: "/images/posts/01.jpg"
+image: "/images/posts/envases-y-recipientes-biodegradables.jpg"
 categories: ["art"]
-authors: ["Mark Dinn"]
-tags: ["diy", "toy"]
+authors: ["Hay horeca"]
+tags: []
 draft: false
 ---
 
-Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
+Los envases biodegradables se descomponen de manera natural en comparación con los envases tradicionales de plástico que pueden durar cientos de años. Al elegir envases biodegradables, estás contribuyendo a la reducción de la acumulación de residuos y la contaminación en nuestros océanos, ríos y paisajes.
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel ad consectetur ut aperiam. Itaque eligendi natus aperiam? Excepturi repellendus consequatur quibusdam optio expedita praesentium est adipisci dolorem ut eius!
 
 ## Creative Design
 
