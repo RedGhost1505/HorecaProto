@@ -5,18 +5,59 @@ import Pagination from "@layouts/components/Pagination.astro";
 import Posts from "@layouts/Posts.astro";
 import { getSinglePage } from "@lib/contentParser.astro";
 import { sortByDate } from "@lib/utils/sortFunctions";
+import { Image } from "@astrojs/image/components";
+
 
 const posts = await getSinglePage("posts");
 const sortedPosts = sortByDate(posts);
 const totalPages = Math.ceil(posts.length / config.settings.pagination);
 const currentPosts = sortedPosts.slice(0, config.settings.pagination);
+const authors = await getSinglePage("authors");
+const { summary_length } = config.settings;
+const { className, fluid } = Astro.props;
 ---
 
 <Base>
   <section class="section">
     <div class="container">
-      <Posts posts={currentPosts} className="mb-16" />
+      <!-- <Posts posts={currentPosts} className="mb-16" /> -->
       <!-- <Pagination currentPage={1} totalPages={totalPages} /> -->
+
+      <div class={`row gy-5 gx-4 ${className} ${posts.length == 1 ? "justify-center" : ""} `}>
+        {
+          posts.map((post: any, i: number) => (
+            <div class={i === 0 && fluid != false ? "col-12" : "col-12 sm:col-6"}>
+              {post.data.image && (
+                <a href={`/${post.slug}`} class="rounded-lg block hover:text-primary overflow-hidden group">
+                  <Image
+                    class="group-hover:scale-[1.03] transition duration-300 w-full"
+                    src={post.data.image}
+                    alt={post.data.title}
+                    width={i === 0 ? 925 : 445}
+                    height={i === 0 ? 475 : 230}
+                  />
+                </a>
+              )}
+              <h3 class="mb-4 mt-5">
+                <a href={`/${post.slug}`} class="block hover:text-primary transition duration-300">
+                  {post.data.title}
+                </a>
+              </h3>
+              <p class="text-text">
+                {post.body?.split('## Creative Design')[0]}
+              </p>
+              {i===0 && (
+              <h3 class="mb-4 mt-20">
+                <a class="block transition duration-300 text-center">
+                  Nuestros productos
+                </a>
+              </h3>
+              )}
+            </div>
+          ))
+        }
+      </div>
+
     </div>
   </section>
 </Base>
